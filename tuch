@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+import sys
+
+#taking command line input from user
+uinput=sys.argv[1:]
+
+for i in uinput:
+
+	f=open(i,'a+')    #opening filename given by user
+	err=f.read()	#storing the data from the file
+
+	try :
+		#checking whether the file is existing or not
+   		if err=="<open file '"+i+"', mode 'r' at 0x7f7db363a6f0>":  
+			w=open(i,'w')
+			w.write('')
+			w.close()
+	except IOError:
+		w=open(i,'r+')
+		w.read()
+		w.close()	
+
+	
+
+
+
